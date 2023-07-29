@@ -1,0 +1,908 @@
+/* @import "../css/font-awesome.min.css";
+@import "../css/fonts.css";
+@import "../css/variable.css";
+@import "../css/responsive.css";
+@import "../css/common.css"; */
+
+/*--datepicker--*/
+.datePickerWrapper {
+	border: 1px solid rgba(57, 57, 57, 0.2);
+	padding: 3px 5px;
+	border-radius: 5px;
+	min-height: 34px;
+	display: flex;
+}
+
+.datePickerWrapper .datePicker {
+	max-width:200px;
+	align-items: center;
+}
+
+.datePickerWrapper .datePicker .w-32 {
+	max-width: 90px;
+}
+
+.datePickerWrapper .datePicker input {
+	width: 100%;
+	border: none !important;
+	background-color: transparent;
+	text-align: center;
+	font-size: 14px;
+	line-height:18.2px;
+}
+.datePickerWrapper .datePicker input::placeholder{
+  color: var(--color);
+}
+.datePickerWrapper .datePicker input:focus {
+	outline: none;
+}
+.vc-popover-content-wrapper .vc-popover-content.direction-bottom {
+	left: -23px !important;
+}
+.vc-pane-container .vc-pane-layout .vc-pane .vc-header .vc-title{
+	font-family: var(--font-family-400)!important;
+}
+.vc-pane-container .vc-pane-layout .vc-pane .vc-weeks{
+	font-family: var(--font-family-400)!important;
+}
+.datePickerWrapper img {
+	width: 18px;
+	margin: 0 0 0 5px;
+}
+
+.redBg {
+	background-color: #e94b4f !important;
+}
+/*----*/
+.header {
+	border-bottom: 1px solid #d7d7d7;
+	background-color: #fbfbfb;
+	padding: 15px 23px;
+	margin-bottom: 0;
+	display:flex;
+}
+
+.header h1 {
+	font-size: 26px;
+    line-height: 31px;
+	letter-spacing: -0.01em;
+}
+
+.header h1 a {
+	text-decoration: none;
+	color: var(--color);
+}
+.header h1 a:hover{
+	color: var(--color);
+}
+.header h1 a i {
+	font-size: 28px;
+	margin: 0 5px 0 0;
+	color: var(--color);
+}
+
+.cardBodyWrapper {
+    padding: 15px 23px;
+    position: relative;
+}
+.cardBodyWrapper.greyBg {
+    background: #fbfbfb;
+    border-bottom: 1px solid rgba(57, 57, 57, 0.2);
+    border-top: 1px solid rgba(57, 57, 57, 0.2);
+}
+
+.cardBodyWrapper .cardWrapper {
+	border-radius: 9px;
+	border-bottom: 0px solid rgba(57, 57, 57, 0.2);
+	margin: 0 0 15px 0;
+}
+
+.cardBodyWrapper .cardWrapper.single .dateCol {
+	background-color: #adadad;
+}
+
+.cardBodyWrapper .cardWrapper.recurring .dateCol {
+	background-color: var(--color);
+	color: var(--color-white);
+}
+.cardBodyWrapper .cardWrapper.recurring .dateCol h4 {
+    margin: 0 0 8px 0;
+}
+
+.cardBodyWrapper .cardWrapper.recurring .dateCol h2,
+.cardBodyWrapper .cardWrapper.recurring .dateCol h4,
+.cardBodyWrapper .cardWrapper.recurring .dateCol p {
+	color: var(--color-white);
+}
+
+.innerWraper .cardWrapper {
+	box-shadow: none;
+}
+
+.dateCol p.from {
+	margin: 5px 0 0 0;
+}
+
+.detailsCol .priceWrap {
+	text-align: right;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+.detailsCol .priceWrap h5{
+	font-size: 13px;
+    line-height: 19px;
+}
+.detailsCol .priceWrap h6{
+	font-size: 14px;
+    line-height: 18.2px;
+    letter-spacing: -0.001em;
+}
+.detailsCol .priceWrap small {
+    display: block;
+}
+
+.limitExceeded {
+	display: flex;
+	align-items: center;
+	padding: 0 15px 0 0;
+}
+
+/* .limitExceededInner {
+	font-size: 12px;
+	line-height: normal;
+	font-family: var(--font-family-700);
+	white-space: nowrap;
+	color: #ffc700;
+} */
+
+.ticketToggle .cardWrapper {
+	margin: 0;
+	padding:15px;
+}
+
+.ticketToggle.show .cardWrapper {
+	border-radius: 0;
+}
+
+.ticketToggle .cardWrapper.active {
+	border-radius: 0;
+	border-bottom: 1px solid rgba(57, 57, 57, 0.2);
+}
+
+.toggleList .cardWrapper {
+	margin: 0;
+	border-radius: 0;
+}
+.thumbHeading {
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	margin: 0 0 6px 0;
+}
+
+.thumbHeading h2 {
+	margin-bottom: 2px;
+	font-size: 14px;
+	line-height:18.2px;
+}
+.thumbDesc {
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+}
+
+.toggleList .buttonWrap {
+	padding-right: 0;
+}
+
+.ticketToggle .buttonWrap .plusBtn.disabled {
+	background-color: #eee !important;
+	cursor: no-drop;
+}
+
+.toggleList .cardWrapper .detailsCol.pad-0 {
+    padding: 0;
+}
+.ticketToggle.show .toggleList .cardWrapper{
+	border-bottom: 1px solid rgba(57, 57, 57, 0.2);	
+}
+.collapseArrow {
+	background-color: var(--color);
+	min-width: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.collapseArrow i {
+	color: var(--color-white);
+	font-size: 22px;
+}
+
+.collapseArrow.lightBg i {
+	color: var(--color);
+}
+
+.buttonWrap {
+	align-items: center;
+}
+
+.singleEventList .cardWrapper .collapseArrow.redBg {
+	min-width: 32px;
+}
+
+.eventDiscountWrapper {
+	max-width:400px;
+	margin: 0 auto;
+}
+
+.eventDiscountWrapper h1 {
+	font-size: 26px;
+	line-height: 31.2px;
+	letter-spacing: -0.01em;
+}
+
+.amountWrapper {
+	border-bottom: 1px solid rgba(57, 57, 57, 0.3);
+	padding: 5px 0;
+}
+
+.amountWrapper p {
+	display: flex;
+	justify-content: space-between;
+}
+
+.totalAmountWrapper p {
+	display: flex;
+	justify-content: space-between;
+	font-family: var(--font-family-700);
+}
+
+.totalAmountWrapper {
+	padding: 5px 0;
+}
+
+.ticketToggle {
+	margin-bottom: 15px;
+	border-radius: 5px;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+}
+.ticketToggle:last-child {
+    margin-bottom: 0;
+}
+.ticketToggle .cardWrapper .collapseArrow.lightBg {
+	background-color: transparent;
+	padding-left:20px;
+}
+
+.ticketToggle .cardWrapper .collapseArrow.lightBg.active i {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+}
+
+.ticketToggle .eventPrice1 {
+	text-align: left;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.ticketToggle .cardWrapper.active .collapseArrow i {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+}
+
+.ticketToggle .buttonWrap span {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	border-radius: 0;
+	padding: 0;
+	min-width: 45px;
+	line-height:17px;
+	font-family: var(--font-family-700);
+}
+
+.ticketToggle .buttonWrap button {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	color: #fff;
+	border-radius: 0;
+	padding: 0;
+	min-width: auto;
+	font-family: var(--font-family-500);
+	border:none;
+	cursor: pointer;
+}
+
+.ticketToggle .buttonWrap .minusBtn {
+	background-color: rgba(215, 215, 215, 1);
+}
+
+.ticketToggle .buttonWrap .plusBtn {
+	background-color: rgba(57, 57, 57, 1);
+}
+.ticketToggle .buttonWrap .plusBtn:focus{
+ outline:none;
+}
+.ticketToggle .buttonWrap .dassedIcon {
+	color: rgba(57, 57, 57, 1);
+}
+
+.singleTicketTotalAmount {
+	background-color: #fbfbfb;
+	justify-content: space-between;
+	padding:10px 20px;
+	align-items: center;
+	border-top: 1px solid rgba(57, 57, 57, 0.2);
+	position: relative;
+	border-bottom: 1px solid rgba(57, 57, 57, 0.3);
+}
+.singleTicketTotalAmount.bottom{
+ position:absolute;
+ width:100%;
+ bottom:0;
+}
+.singleTicketTotalAmount .collapse {
+	display: block;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.singleTicketTotalAmount .collapseInner {
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: 5px;
+    background-color: #d7d7d7;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border-radius: 50px;
+    margin: 0 -20px;
+}
+.singleTicketTotalAmount .expand {
+    justify-content: space-between;
+    width: 100%;
+	margin: 10px 0 0 0;
+}
+.singleTicketTotalAmount .ticketCol,
+.singleTicketTotalAmount .labelBtn {
+	text-align: center;
+}
+
+.singleTicketTotalAmount h2 {
+	font-size: 14px;
+	line-height: 18.2px;
+	letter-spacing: 0.1px;
+}
+
+.singleTicketTotalAmount h3 {
+	font-size: 10px;
+	line-height: 13px;
+	font-family: var(--font-family-600);
+	letter-spacing: 0.03em;
+}
+
+.singleTicketTotalAmount button {
+	font-size: 16px;
+	padding: 10px 15px;
+	font-family: var(--font-family-700);
+}
+
+.cardBodyWrapper.cart {
+	background: #fbfbfb;
+    border-bottom: 1px solid rgba(57, 57, 57, 0.3);
+}
+
+.ticketWrapper {
+	padding: 15px 0 25px 0px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.ticketWrapper .ticketCategory {
+	background-color: #fbfbfb;
+	box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+	overflow: hidden;
+	margin-bottom: 15px;
+	min-height: 70px;
+	border-radius: 5px;
+	padding: 0;
+	border-bottom: 0;
+}
+.ticketWrapper .ticketCategory:last-child{
+	margin-bottom:0px;	
+}
+.ticketCategory .detailsCol {
+    background: #fff;
+}
+
+.ticketWrapper .ticketCategory .dateCol h2 {
+	font-size: 26px;
+	line-height: 26px;
+}
+
+.ticketWrapper .ticketCategory .detailsCol h2 {
+	margin: 0;
+}
+
+.footerActionBtn {
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+.footerActionBtn.btns .button {
+	margin: 0 0 15px 0;
+}
+
+.footerActionBtn.btns {
+	margin-top: 60px;
+}
+
+.footerActionBtn .button{
+	font-size: 15px;
+	padding: 12px;
+	width: 100%;
+}
+
+.footerActionBtn .button.disabled {
+	background-color: #ddd;
+	cursor: no-drop;
+}
+
+.sloganText {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.contentInnerWraper .cardBodyWrapper .sloganText p {
+	font-size: 12px;
+	line-height: 15.6px;
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+.blankArray {
+	margin: 0px 0 20px;
+	font-size: 12px;
+	color: rgba(233, 75, 79, 1);
+}
+
+.cardWrapper.active .collapseArrow img {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+}
+
+.ticketToggle .cardWrapper.active .collapseArrow img {
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+}
+
+.actionBtnPlusMinus .btnCol {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+}
+
+.actionBtnPlusMinus .btnCol button {
+	background-color: var(--color);
+	border: none;
+	padding: 0;
+	width: 25px;
+	height: 25px;
+}
+
+.innerHeading {
+	margin: 0 0 20px 0;
+}
+
+.innerHeading h1 {
+	font-size: 26px;
+	line-height:31px;
+}
+
+.inputWrapper {
+	display: flex;
+	margin: 0 0 90px 0;
+	justify-content: space-between;
+}
+
+.inputInnerWrapper {
+	background: #fbfbfb;
+	border: 1px solid rgba(57, 57, 57, 0.2);
+	box-sizing: border-box;
+	border-radius: 8px;
+	padding: 10px 10px 10px 57px;
+	width: 49%;
+	position: relative;
+}
+
+.stripeWrapper {
+	background: #fff;
+	border: 1px solid rgba(57, 57, 57, 0.2);
+	box-sizing: border-box;
+	border-radius: 8px;
+	padding: 10px;
+	position: relative;
+}
+
+.stripeWrapper .error-message ,.stripeInner .error-message {
+	position: absolute;
+	bottom: -21px;
+	color:var(--color-red);
+	font-size: 10px;
+}
+.stripeWrappernew .stripeInner{
+	background: #fff;
+	border: 1px solid rgba(57, 57, 57, 0.2);
+	box-sizing: border-box;
+	border-radius: 8px;
+	position: relative;
+}
+.stripeWrappernew .stripeInner .stripe{
+ background:transparent;
+}
+.inputInnerWrapper.active {
+	border: 1px solid var(--color);
+}
+
+.inputInnerWrapper:last-child {
+	margin: 0;
+}
+
+.inputInnerWrapper h4 {
+	font-size: 14px;
+	margin: 0 0 0px 0;
+	display: block;
+}
+
+.formInputs {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: wrap;
+}
+
+.formInputs .formGroup {
+	width: 49%;
+	margin: 0 0 22px 0;
+	position: relative;
+}
+
+.formInputs .formGroup .error {
+	position: absolute;
+	color: #e94b4f;
+	font-size: 10px;
+}
+
+.formGroup.space {
+	justify-content: space-between;
+	display: flex;
+}
+
+.formGroup.space .formGroup {
+	margin: 0;
+}
+
+.formGroup label {
+	font-family: var(--font-family-700);
+	font-size: 12px;
+	margin: 0 0 10px 0;
+	display: inline-block;
+	line-height:18.2px;
+	padding: 0px!important;
+}
+
+.formGroup .labelInput {
+	position: absolute;
+	left: 12px;
+	color: rgba(57, 57, 57, 0.4);
+	font-size: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 0 5px;
+	pointer-events: none;
+	line-height:18.2px;
+}
+
+.formGroup input:focus~.labelInput {
+	transform: scale(0.75) translateY(-39px);
+	background: #fbfbfb;
+	color: var(--color);
+	left:0px;
+}
+
+.formGroup input.active {
+	border: 1px solid var(--color);
+}
+
+.formGroup input.errorInput {
+	border: 1px solid #e94b4f;
+}
+
+.formGroup input.errorInput~.labelInput {
+	transform: scale(0.75) translateY(-39px);
+	background: #fbfbfb;
+	color:var(--color-red);
+	left:0;
+}
+
+.formGroup input.active~.labelInput {
+	transform: scale(0.75) translateY(-39px);
+	background: #fbfbfb;
+	color: var(--color);
+	left:0;
+}
+
+.formInputs .formGroup .formLabel {
+	position: relative;
+}
+
+.formInputs .formGroup .checkbox {
+	position: relative;
+	display: inline-block;
+	margin: 0px!important;
+}
+
+.formInputs .formGroup .checkbox input {
+	padding: 0;
+	height: initial;
+	width: initial;
+	margin-bottom: 0;
+	display: none;
+	cursor: pointer;
+}
+
+.formInputs .formGroup .checkbox label {
+	position: relative;
+	cursor: pointer;
+	margin: 0;
+}
+
+.formInputs .formGroup .checkbox label:before {
+	content: "";
+	-webkit-appearance: none;
+	background-color: transparent;
+	border: 2px solid var(--color);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+	padding: 8px;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-right: 10px;
+	border-radius: 6px;
+}
+
+.formInputs .formGroup .checkbox input:checked+label:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 4px;
+	left: 8px;
+	width:5px;
+	height: 10px;
+	border: solid var(--color);
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+.inputWrapper.payment {
+	margin: 0 0 20px 0;
+}
+.inputWrapper.payment .inputInnerWrapper .inputGroup.cards {
+    position: absolute;
+    left: 10px;
+    top: -2px;
+    transform: translateY(0);
+}
+
+.inputWrapper.payment .inputInnerWrapper .inputGroup .cards [type="radio"]:not(:checked)+label:before,
+.inputWrapper.payment .inputInnerWrapper .inputGroup .cards [type="radio"]:checked+label:before
+{
+  top:-10px
+}
+.inputWrapper.payment .inputInnerWrapper .inputGroup .cards [type="radio"]:checked+label:after{
+  top:-7px;
+}
+.inputWrapper.payment .inputInnerWrapper h4 {
+	margin: 0;
+}
+
+.inputWrapper.payment .inputInnerWrapper.active {
+	border: 1px solid var(--color);
+}
+
+.payDesc h2 {
+	font-size: 14px;
+	margin: 0 0 10px 0!important;
+	line-height:18px;
+}
+
+.payDesc p {
+	margin: 0 0 18px 0!important;
+}
+
+.payDesc .buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardBodyWrapper.bgLight {
+	background: #fbfbfb;
+	border-bottom: 1px solid #d7d7d7;
+}
+
+.ticketDesc h2 {
+    font-size: 18px;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 0 0 12px 0;
+    line-height: 23px;
+}
+
+.ticketDesc .eventDetails {
+	padding: 25px 15px;
+}
+
+.ticketDesc .eventInnerDetails {
+	position: relative;
+	padding: 0 0 0 50px;
+	margin: 0 0 20px 0;
+}
+
+.ticketDesc .eventInnerDetails:last-child {
+	margin: 0;
+}
+
+.ticketDesc .eventInnerDetails .eventIcon {
+	position: absolute;
+	left: 0;
+	text-align: center;
+	top: 50%;
+	transform: translatey(-50%);
+	width: 31px;
+}
+
+.ticketDesc .eventInnerDetails .eventIcon i {
+	font-size: 20px;
+}
+.ticketCart {
+	margin: 0 0 15px 0;
+}
+
+.ticketCart .table {
+	width: 100%;
+	max-width: 100%;
+	border-collapse: collapse;
+}
+
+.ticketCart .table>thead {
+	max-width: 100%;
+	width: 100%;
+	background: #fbfbfb;
+}
+
+.ticketCart .table>thead>tr>th {
+	padding: 0.75rem;
+	vertical-align: top;
+	border-top: 1px solid #d7d7d7;
+	border-bottom:1px solid #d7d7d7;
+	font-size: 18px;
+	font-family: var(--font-family-700);
+	text-align: left;
+	line-height: 23px;
+}
+
+.ticketCart .table>thead>tr>th:last-child {
+	text-align: right;
+}
+
+.ticketCart .table>tbody>tr>td {
+	padding: 0.75rem;
+	vertical-align: top;
+	border-bottom: 1px solid rgba(57, 57, 57, 0.2);
+    font-size: 14px;
+    line-height: 15.6px;
+}
+
+.ticketCart .table>tbody>tr>td:last-child {
+	text-align: right;
+}
+
+.ticketCart .table>tfoot>tr>td {
+	padding: 0.75rem 0;
+	vertical-align: top;
+	border-top:1px solid #d7d7d7;
+	font-size: 12px;
+}
+
+.ticketCart .table>tfoot>tr>td:last-child {
+	text-align: right;
+}
+
+.contentInnerWraper .cardBodyWrapper .ticketCartDesc h4 {
+	font-size: 12px;
+	margin: 0 0 4px 0!important;
+}
+
+.contentInnerWraper .cardBodyWrapper .ticketCartDesc p {
+	font-size: 12px!important;
+	margin:0px!important;
+	line-height:15.6px!important;
+}
+
+.ticketMessage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 15px 0 0;
+}
+
+.ticketMessageInner {
+	border-radius: 6px;
+	font-size: 10px;
+	color: #fbfbfb;
+	text-align: center;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	width: auto;
+	line-height: normal;
+	display: inline-block;
+	white-space: nowrap;
+	padding: 6px 18px;
+	font-family: var(--font-family-700);
+}
+
+.ticketMessageInner.available {
+	background-color: #393939;
+}
+
+.ticketMessageInner.soldOut {
+	background-color: #e94b4f;
+}
+
+.ticketInfo h2 {
+	font-size: 26px;
+	line-height:31px;
+}
+
+.ticketNewCategory {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ticketNewCategory h2 {
+	font-size: 14px;
+}
+
+.ticketNewCategory h2 span {
+	display: block;
+	font-family: var(--font-family-300);
+}
+
+.ticketNewCategory .amount {
+	font-size: 14px;
+}
+
+
