@@ -136,7 +136,7 @@ import { computed, ref } from "vue";
 import { useStore } from "vuex";
 import { dateFormat, timeFormat } from "../../common/common";
 import moment from "moment";
-import bam from "../../main";
+import Demo from "../../main";
 import { useRouter } from "vue-router";
 import VenuAddress from "../../components/singleEvent/venuAddress/VenueAddress.vue";
 export default {
@@ -184,7 +184,7 @@ export default {
           submitting.value = true;
           store.commit("loadingStatus", true);
           try {
-            let resp = await bam.order.sendOrderEmail({ id: orderID.value.id });
+            let resp = await Demo.order.sendOrderEmail({ id: orderID.value.id });
             store.commit("successMsg", resp);
           } catch (error) {
             store.commit("loadingStatus", false);

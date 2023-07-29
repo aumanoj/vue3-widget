@@ -1,9 +1,9 @@
 /* Including headers file */
 import router from "../router/"
 import moment from "moment"
-import bam from '../main'
+import Demo from '../main'
 import Swal from 'sweetalert2'
-// import {saveStreamToFile} from 'bam-ticketing-sdk';
+// import {saveStreamToFile} from 'Demo-ticketing-sdk';
 import download from "downloadjs"
 
 
@@ -19,7 +19,7 @@ export const getEvents = async ({ commit }, dateRange) => {
     let dateRng = [startDateFormat, endDateFormat];
     if (dateRange) {
         try {
-            let response = await bam.event.listEvents({
+            let response = await Demo.event.listEvents({
                 with: {
                     ticket_config: true,
                     occurrence: true,
@@ -52,7 +52,7 @@ export const getEvents = async ({ commit }, dateRange) => {
                 })
                 setTimeout(async () => {
                   commit('loadingStatus', true)
-                    let response = await bam.event.listEvents({
+                    let response = await Demo.event.listEvents({
                         with: {
                             ticket_config: true,
                             occurrence: true,
@@ -73,7 +73,7 @@ export const getEvents = async ({ commit }, dateRange) => {
         }
     } else {
         try {
-            let response = await bam.event.listEvents({
+            let response = await Demo.event.listEvents({
                 with: {
                     ticket_config: true,
                     occurrence: true,
@@ -91,7 +91,7 @@ export const getEvents = async ({ commit }, dateRange) => {
 export const getCustomEvent = async ({ commit, state }) => {
     try {
 
-        let response = await bam.event.getEvent({
+        let response = await Demo.event.getEvent({
             id: state.eventID
         })
         commit('setEvent', response)
@@ -106,7 +106,7 @@ export const getCustomEvent = async ({ commit, state }) => {
 export const getEvent = async ({ commit }, id) => {
     commit('loadingStatus', true)
     try {
-        let response = await bam.event.getEvent({
+        let response = await Demo.event.getEvent({
             id: id
         })
         commit('setEvent', response)
@@ -122,7 +122,7 @@ export const getEvent = async ({ commit }, id) => {
 export const sigleEventWithTimeSlot = async ({ commit }, data) => {
     commit('loadingStatus', true)
     try {
-        let response = await bam.event.getEvent({
+        let response = await Demo.event.getEvent({
             id: data.event_id
         })
         commit('setEventWithTimeSlot', response)
@@ -140,7 +140,7 @@ export const sigleEventWithTimeSlot = async ({ commit }, data) => {
 export const workSpaceKey = async ({ commit }) => {
     commit('loadingStatus', true)
     try {
-        let organizer = await bam.account.getOrganizer({
+        let organizer = await Demo.account.getOrganizer({
             id: 'eventspace',
             fields: ['workspace']
         });
@@ -157,7 +157,7 @@ export const workSpaceKey = async ({ commit }) => {
 export const recurringEvent = async ({ commit }, id) => {
     commit('loadingStatus', true)
     try {
-        let response = await bam.event.getEvent({
+        let response = await Demo.event.getEvent({
             id: id
         })
         commit('setRecurringEvent', response)
@@ -178,7 +178,7 @@ export const recurringEvent = async ({ commit }, id) => {
 export const createOrder = async ({ commit }, cartItem) => {
     commit('loadingStatus', true)
     try {
-        let response = await bam.order.createOrder({
+        let response = await Demo.order.createOrder({
             orderItem: cartItem.order_item,
             format: cartItem.format
         })
@@ -223,7 +223,7 @@ export const ticketHolderInfo = async ({ commit }, data) => {
         data.orderItem.forEach(async (element, i) => {
             element.ticket.forEach(async (item, j) => {
                 try {
-                    await bam.order.createTicketHolder({
+                    await Demo.order.createTicketHolder({
                         id: item.id
                     }, {
                         firstName: data.data.first_name[i + '' + j],
@@ -250,7 +250,7 @@ export const orderContact = async ({ commit }, data) => {
         data.data.email = data.data.billing_email
     }
     try {
-        await bam.order.createOrderContact({
+        await Demo.order.createOrderContact({
             id: data.id
         }, {
             first_name: data.data.first_name,
@@ -274,7 +274,7 @@ export const paymentInitiate = async ({ commit, state }, data) => {
     if (!state.submitting) {
         state.submitting = true;
         try {
-            let response = await bam.payment.createPaymentIntent({
+            let response = await Demo.payment.createPaymentIntent({
                 orderId: data.id,
                 type: data.payMethod
             })
@@ -306,7 +306,7 @@ export const downloadTicketPdf = async ({ commit, state }, data) => {
         if (!state.submitting) {
             state.submitting = true;
             try {
-                let ticket = await bam.order.downloadTickets({
+                let ticket = await Demo.order.downloadTickets({
                     id: data.orderId
                 })
                 download(ticket, "ticket.pdf", "application/pdf")

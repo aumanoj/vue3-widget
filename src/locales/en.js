@@ -97,7 +97,7 @@ const english = {
   deliveryMethod:{
     heading:'Delivery Methods',
     p1:'Secure digital ticket or the old-school way?',
-    BAMTickets:' Tickets',
+    DemoTickets:' Tickets',
     p2:'Compatible with your B.A.M Wallet App. Please prepare your smartphone for the next step.',
     pdfPkPass:'PDF/PK PASS',
     p3:'Use with any iOS and Android App that supports pkpass files or print your tickets at home.',

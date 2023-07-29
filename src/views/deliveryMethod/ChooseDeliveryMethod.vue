@@ -15,12 +15,12 @@
         <p>{{$t('deliveryMethod.p1')}}</p>
     </div>
     <div class="inputWrapper">
-        <div class="inputInnerWrapper" :class="ticketFormat=='BAM' ?'active':''">
+        <div class="inputInnerWrapper" :class="ticketFormat=='Demo' ?'active':''">
             <div class="inputGroup">
-                <input type="radio" id="test1" name="ticketFormat" :value="'BAM'" v-model="ticketFormat" disabled>
+                <input type="radio" id="test1" name="ticketFormat" :value="'Demo'" v-model="ticketFormat" disabled>
                 <label for="test1"></label>
             </div>
-            <h4>{{$t('deliveryMethod.BAMTickets')}}</h4>
+            <h4>{{$t('deliveryMethod.DemoTickets')}}</h4>
             <p>{{$t('deliveryMethod.p2')}}</p>
         </div>
         <div class="inputInnerWrapper" :class="ticketFormat=='PDF' ?'active':''">

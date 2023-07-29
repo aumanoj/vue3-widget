@@ -6,7 +6,7 @@
 <script>
 import {watchEffect,ref} from "vue"
 import {useStore} from "vuex";
-import bam from '../../../main'
+import Demo from '../../../main'
 export default {
     name: 'VenuAddress',
     props: {
@@ -20,7 +20,7 @@ export default {
             if (props.venue_id) {
                 store.commit('loadingStatus', true)
                 try {
-                    let response = await bam.venue.getVenue({
+                    let response = await Demo.venue.getVenue({
                         id: props.venue_id
                     })
                     venueName.value = response

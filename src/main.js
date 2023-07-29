@@ -33,15 +33,15 @@ createApp(App,{...el.dataset})
     //     document.querySelector("vue-widget").fields = {a:el.dataset};
     //   }, 1000);
 
-    import {BAM} from '';
+    import {Demo} from '';
 
     // console.log('el',el.dataset)
-    const bam =new BAM(el.dataset.domain) // set base url
+    const Demo =new Demo(el.dataset.domain) // set base url
         async function main(){
-           await bam.authorize() //for auth 
-           await bam.useOrganizer(el.dataset.organizer_id)// set organization 
+           await Demo.authorize() //for auth 
+           await Demo.useOrganizer(el.dataset.organizer_id)// set organization 
         }
      
         main();
     
-    export default bam
+    export default Demo
