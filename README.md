@@ -1,5 +1,5 @@
 # vue3-widget
-
+Created widget for book tickets for museum, sports and any festival. vendors sell tickets to the organizer and provide platform if needed to sell the tickets. that was the requirement.
 ## Project setup
 ```
 npm install
